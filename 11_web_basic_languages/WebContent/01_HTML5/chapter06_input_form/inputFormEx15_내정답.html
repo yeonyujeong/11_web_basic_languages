@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>회원가입 폼</legend>
+			<p><label>이름 : <input type="text" name="name"></label></p>
+			<p><label>아이디 : <input type="text" name="id"></label></p>
+			<p><label>비밀번호 : <input type="password" name="pwd"></label></p>
+			<p><label>나이 : <input type="text" name="age"></label></p>
+			<p>
+				<label>성별 :
+					<input type="radio" name="gender" value="m">남자
+					<input type="radio" name="gender" value="w" checked>여자
+				</label>
+			</p>
+			<p>
+				<label>취미 :
+					<input type="checkbox" name="hobby" value="exercise">운동
+					<input type="checkbox" name="hobby" value="sleep">잠자기
+					<input type="checkbox" name="hobby" value="study">공부하기
+				</label>
+			</p>
+			<p>
+				<label>가고싶은 여행지는
+					<select name="hobby">
+						<option value="guam">괌
+						<option value="jeju">제주도
+						<option value="austrailia">호주
+					</select>
+				</label>
+			</p>
+			<p><label for="memo">메모</label></p>
+			<p><textarea name="memo" id="memo" rows="10" cols="50"></textarea></p>
+			<p><input type="submit" value="회원가입"><input type="reset" value="다시쓰기"></p>
+		</fieldset>
+	
+	</form>
+</body>
+</html>
