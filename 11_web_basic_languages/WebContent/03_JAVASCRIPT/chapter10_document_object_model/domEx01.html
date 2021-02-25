@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>id와 자바스크립트</title>
+</head>
+<body>
+
+<!-- 
+	
+		# 문서 객체 모델 (DOM : Document Object Model)
+		
+		- 웹페이지가 적재되면 브라우저는 DOM을 생성한다.
+		- DOM은 트리(tree)로 표현하며 , 트리에 있는 하나의 잎(요소)를 node라고 한다.
+		- 관련 용어 : 부모노드 , 형제노드 , 자식노드
+		
+	 -->
+
+   	<fieldset>
+   		<p>
+			<label for="id">아이디 : </label><input type="text" id="id" autofocus>
+			<input type="button" value="버튼" onclick="process1()">
+		</p>
+		<p>	
+			<label for="subject">과목 : </label>
+			<input type="checkbox" id="subject-html" name="subject" value="html" > html
+			<input type="checkbox" id="subject-css" name="subject" value="css"> css
+			<input type="checkbox" id="subject-javascript" name="subject" value="javascript" checked> javascript
+			<input type="button" value="버튼" onclick="?">
+		</p>
+		<p>
+			<label for="browser">브라우저 : </label>
+			<input type="radio" id="chrome" name="browser" value="chrome" checked> chrome
+			<input type="radio" id="fireFox" name="browser" value="fireFox"> fireFox
+			<input type="radio" id="exploreEdge" name="browser" value="exploreEdge"> exploreEdge
+			<input type="button" value="버튼" onclick="?">
+		</p>
+		<p>
+			<label for="grade">학년 : </label>
+		    <select id="grade">
+		        <option id="grade1" value="1">1학년</option>
+		        <option id="grade2" value="2">2학년</option>
+		        <option id="grade3" value="3">3학년</option>
+		   	</select>
+		   	<input type="button" value="버튼" onclick="?">
+		</p>
+		
+	    <h5>메세지</h5>
+	    <div id="content1">원본 메세지1 입니다.</div>
+		<p>
+		    <input type="button" onclick="?" value="버튼">
+		    <input type="button" onclick="?" value="수정버튼">
+	    </p>
+    </fieldset>
+    
+    <script>
+    
+    	function process1(){
+    		alert("process1 함수가 실행됩니다.");
+    		
+			// 예시 1) .value : id값을 얻어온다.    		
+			console.log(document.getElementById("id").value);
+			
+			// 예시 2) .getAttribute("속성") 태그의 속성값을 조회한다.
+			console.log("attribute : " + document.getElementById("id").getAttribute("autofocus"));
+			
+			// 예시 3) .setAttribute("속성","값") 태그의 속성값을 변화한다.
+			
+    	}
+    	
+    	function process2(){
+    		
+    	}
+    	
+    	function process3(){
+    		
+    	}
+    
+    	function process4(){
+    		
+    	}
+    	
+    	function process5_1(){
+    		
+    	}
+    
+    	function process5_2(msg){
+    		
+    	}
+    	
+    </script>
+    
+    
+    
+</body>
+</html>
