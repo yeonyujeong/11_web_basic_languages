@@ -65,7 +65,13 @@
 			console.log("attribute : " + document.getElementById("id").getAttribute("autofocus"));
 			
 			// 예시 3) .setAttribute("속성","값") 태그의 속성값을 변화한다.
-			
+			document.getElementById("id").setAttribute("disabled" , "disabled");
+            document.getElementById("id").setAttribute("autofocus" , "");
+
+            // 속성변경후 확인
+            console.log("속성값 변경후");
+            console.log("attribute : " + document.getElementById("id").getAttribute("autofocus"));
+            console.log("disabled : " + document.getElementById("id").getAttribute("disabled"));
     	}
     	
     	function process2(){
