@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>name과 자바스크립트</title>
+</head>
+<body>
+
+	<!-- name을 주로 사용하는 태그 checkbox -->	
+	<input type='checkbox' name='webLanguages' value='html' /> html
+	<input type='checkbox' name='webLanguages' value='css' /> css
+	<input type='checkbox' name='webLanguages' value='javascript' /> javascript
+	<input type='button' onclick='process1()' value='버튼' /><br> 
+
+	<!-- name을 주로 사용하는 태그 radio -->	
+	<input type='radio' name='browser' value='chrome' /> chrome
+	<input type='radio' name='browser' value='fireFox' /> fireFox
+	<input type='radio' name='browser' value='exploreEdge' /> explore edge
+	<input type='button' onclick='process2()' value='버튼' /><br> 
+	
+	<script>
+	
+	/*
+		# getElementsByName("name");
+		
+		- HTML문서에 name 일치한 값을 선택한다.
+		- 데이터가 컬렉션 형태로 저장된다.
+		- 내용 , 스타일 , 속성 모두에 변화를 줄 수 있다.
+
+	*/	
+		function process1() {
+			
+			alert("process1 함수가 실행되었습니다");
+			
+			var webLanguages = document.getElementsByName("webLanguages");
+			
+			// 예시 1) 체크박스 크기 확인
+			console.log("length : " + webLanguages.length);
+			console.log("===================");
+			
+			// 예시 2) 체크박스의 전체 값 조회해보기
+			for (var i = 0; i < webLanguages.length; i++) {
+				console.log("data : " + webLanguages[i].value);
+			}
+			console.log("===================");
+			
+			// 예시 3) 체크된 값과 체크되지 않은 값을 조회해보기
+			for (var i = 0; i < webLanguages.length; i++) {			
+				if(webLanguages[i].checked){
+					console.log(webLanguages[i].value + "(체크)");
+				}else{
+					console.log(webLanguages[i].value);				
+				}
+			}
+			console.log("===================");
+			
+			// 예시 4) 특별한 요소를 체크해보기
+			webLanguages[0].checked = true;
+
+			// 예시 5) disabled 속성 적용해보기
+			for (var i = 0; i < webLanguages.length; i++) {
+				webLanguages[i].disabled = true;
+			}
+			console.log("///////////////////");
+		}	
+		
+function process2() {
+			
+			alert("process2 함수가 실행되었습니다.");
+			
+			var browser = document.getElementsByName("browser");
+			
+			// 예시 1) radio의 크기 확인
+			console.log("radio의 크기 : " + browser.length);
+			console.log("===================")
+			// 예시 2) radio의 전체 값 조회해보기
+			for (var i = 0; i < browser.length; i++) {
+				console.log(browser[i].value);
+			}
+			console.log("===================")			
+			// 예시 3) 체크된 값과 체크되지 않은 값을 조회해보기
+			for (var i = 0; i < browser.length; i++) {
+				if(!browser[i].checked){
+					console.log(browser[i].value + "(체크X)");
+				}
+				else{
+					console.log(browser[i].value + "(체크O)");
+				}
+			}		
+			// 예시 4) 특별한 요소를 체크해보기
+			browser[1].checked = true;
+			
+			// 예시 5) disbaled 속성 적용해보기
+			browser[0].disabled = true;
+			
+		}
+		
+		
+	
+	</script>
+	
+	
+</body>
+</html>

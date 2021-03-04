@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window 객체2</title>
+<script>
+
+	/*
+	
+		# (window).setTimeout(함수 , 밀리초);
+		
+			- 지정한 밀리초 뒤에 함수가 실행된다.
+		
+		# (window).setInterval(함수 , 밀리초);
+			
+			- 지정한 밀리초마다 함수가 실행된다.
+		
+		# (window).clearInterval(객체)	
+			
+			- setInterval 메서드를 종료시킨다.
+	*/
+
+	// 동작할 함수
+	function showGreeting() {
+		alert("5초 뒤에 동작");		
+	}
+			
+	// 5초뒤에 showGreeting 함수를 실행		
+	setTimeout(showGreeting , 5000);		
+	
+	// 10초뒤에 함수를 실행 :  한번만 실행할 목적으로 이름이 없는 함수를 만들 수 있다.(익명함수)	
+	setTimeout( function(){alert("10초 뒤에 동작");}, 10000);
+			
+	///////////////////////////////////////////////////////////////////////
+	
+	var cnt1 = 1;
+	var obj;
+	
+	
+	function changePicture() {
+		
+		document.getElementById("pic").src="../images/pic_" + cnt1 +".jpg";
+		cnt1++;
+		
+		if(cnt1 == 9) cnt1 = 1;
+	}
+	
+	//chagePicture 함수를 주기적으로 실행시킬 함수
+	function startChange(){
+		obj = setInterval(changePicture , 1000);		
+	}
+	
+	//chagePicture 함수를 멈출 함수
+	function stopChange(){
+		clearInterval(obj);
+	}
+	
+	//익명함수 적용 예시
+	var subNum = 1000;
+	setInterval(function(){
+		console.log("subNum : " +subNum);
+		subNum--;
+	} , 1000);
+	
+</script>
+</head>
+<body>
+	
+	<img src="../images/pome.png" alt="강아지" id="pic" width="400" height="400">
+	<hr>
+	<button onclick="startChange()">시작</button>
+	<button onclick="stopChange()">중지</button>
+	
+</body>
+</html>
