@@ -12,6 +12,7 @@
 			
 			// 예시1) 선택된 셀렉트박스의 값을 가져오기
 			alert("선택된 value : " + $("#selectBox").val());
+			//						  $("#selectBox : selected").val()
 		
 			// 예시2) 선택된 셀렉트박스의 값을 다른값으로 변경해보기
 			var changeYear = prompt("변경하고싶은 연도 : ");
@@ -22,6 +23,47 @@
 			$("#selectBox").prop("disabled",true);
 	
 		})
+		
+		$("#changeRadioBox").click(function(){
+		
+			// 예시 1) 선택된 라디오 박스의 value를 확인하기
+			alert("선택된 value : " + $("input[name='radioBox']:checked").val()); 
+		
+			// 예시 2) 선택된 라디오 박스의 값을 다른 값으로 변경하기
+			var changeYear = prompt("변경하고 싶은 연도 : ");
+			$("input[name='radioBox'][value='"+ changeYear + "']").prop("checked",true);
+			
+			// 예시 3) 라디오 박스를 비활성화하기
+			$("input[name='radioBox']").prop("disabled", true);
+			
+		})
+		
+		$("#changeCheckBox").click(function(){
+			
+			// 예시 1) 체크박스 관련정보 확인하기
+			alert("전체 체크박스의 개수 : " + $("input[name='checkBoxTest']").length);
+			alert("선택된 체크박스의 개수 : " + $("input[name='checkBoxTest']:checked").length);
+			
+			// 예시 2) 선택된 체크박스의 값 확인
+			$("input[name='checkBoxTest']:checked").each(function(){
+				alert("선택된 체크박스의 value : " + $(this).val());
+			})
+			
+			// 예시 3) 선택된 체크박스의 값을 변경하기
+			var changeCnt = prompt("수정하고 싶은 체크박스의 개수 : " , 3);
+			
+			$("input[name='checkBoxTest']").prop("checked",false);	// 전체 체크박스 해지
+			
+			for (var i = 0; i < changeCnt; i++) {
+				var changeData = prompt("수정하고 싶은 연도 : ");
+				$("#year" +changeData).prop("checked",true);
+			}
+			
+			// 예시 4) 체크박스를 비활성화하기
+			$("input[name='checkBoxTest']").prop("disabled",true);
+			
+		})
+		
 		
 	})
 	
@@ -40,6 +82,23 @@
     <button id="changeSelectBox">셀렉트 데이터 변경</button>
     
     <hr>
+    
+    <input type="radio" name="radioBox" value="2018">2018년
+    <input type="radio" name="radioBox" value="2019">2019년
+    <input type="radio" name="radioBox" value="2020">2020년
+    <input type="radio" name="radioBox" value="2021" checked>2021년
+    <input type="radio" name="radioBox" value="2022">2022년
+	<button id="changeRadioBox">라디오 데이터 변경</button>
+	
+	<hr>
+
+	<input type="checkbox" name="checkBoxTest" id="year2018" value="2018" /> 2018
+	<input type="checkbox" name="checkBoxTest" id="year2019" value="2019" /> 2019
+	<input type="checkbox" name="checkBoxTest" id="year2020" value="2020" /> 2020
+	<input type="checkbox" name="checkBoxTest" id="year2021" value="2021" /> 2021
+	<input type="checkbox" name="checkBoxTest" id="year2022" value="2022" /> 2022
+	<button id="changeCheckBox">체크박스 값 변경</button>
+    
 
 </body>
 </html>
